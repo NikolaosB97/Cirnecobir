@@ -1,0 +1,699 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.black-bar h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* SemiBold 600 */
+}
+
+.black-bar p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; /* Medium 500 */
+  font-style: italic; /* Italic */
+}
+/* pop-up */
+.age-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.age-popup-content {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.age-popup h2 {
+  margin-bottom: 10px;
+}
+
+.age-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.age-popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #9db39b; /* Colore del pulsante */
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.age-popup-buttons button:hover {
+  background-color: #7b947e; /* Colore del pulsante al passaggio del mouse */
+}
+/* fine pop-up */
+
+/* Stili generali */
+/* Stili generali */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Mantiene il rapporto 16:9 su desktop */
+  height: 0;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.black-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* Modifiche per dispositivi mobili */
+@media (max-width: 768px) {
+  .video-container {
+    padding-bottom: 56.25%;
+  }
+  
+  .black-bar {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: auto;
+    z-index: 1;
+    margin-top: -10%;
+  }
+
+  .video-container {
+    height: auto;
+  }
+  
+  .video-container .video-background {
+    position: static; /* Rimuove il posizionamento assoluto */
+    width: 100%;
+    height: auto;
+  }
+
+  .video-container + .black-bar {
+    margin-top: 0;
+  }
+}
+
+.black-bar h1 {
+  margin-top: 0;
+  font-size: 1.5em; /* Ridotto per adattarsi alla nuova dimensione della barra */
+}
+
+.black-bar p {
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 0.9em; /* Ridotto per adattarsi alla nuova dimensione della barra */
+}
+
+
+/* Sezione Descrizione e Collarino */
+.collarino-section {
+  background-color: #9db39b !important;
+}
+
+#collarino-title, #collarino-description, #collarino-image {
+  position: relative;
+  z-index: 2;
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#collarino-description {
+  font-size: 1.2em;
+  white-space: pre-wrap;
+  overflow: hidden;
+  animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+.collarino-section {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .collarino-section .row {
+    flex-direction: column;
+  }
+
+  #collarino-description {
+    margin-top: 20px;
+  }
+
+  #collarino-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .collarino-section{
+    margin-top: -57%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .collarino-section {
+    padding: 40px 60px; /* Aggiungi più padding per schermi più grandi */
+  }
+
+  #collarino-title {
+    font-size: 2rem; /* Regola la dimensione del titolo per schermi più grandi */
+  }
+
+  #collarino-description {
+    font-size: 1.4em; /* Aumenta la dimensione del testo */
+    margin-right: 20px; /* Crea più spazio tra il testo e l'immagine */
+  }
+
+  #collarino-image {
+    max-width: 400px; /* Aumenta la dimensione dell'immagine per schermi più grandi */
+    height: auto;
+  }
+
+  .collarino-section .row {
+    justify-content: space-around; /* Aumenta lo spazio tra gli elementi */
+  }
+}
+/* Ombreggiatura per l'immagine */
+
+
+
+/* Card Styles */
+.card-container {
+  height: 100%;
+  overflow: hidden; /* Ensures content stays within the card boundaries */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  display: none;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.card:hover .card-text {
+  display: block;
+}
+
+.hidden-description {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .hidden-description {
+  opacity: 1;
+}
+
+/* Ensuring equal card height */
+.product-section .row > [class*='col-'] {
+  display: flex;
+  align-items: stretch;
+}
+
+
+/* banner section with beer */
+/* banner section with beer */
+.banner-section {
+  background-color: #9db39b;
+  padding: 20px 0;
+
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.paws-left, .paws-right {
+  position: relative;
+  display: inline-block;
+}
+
+.paws-img {
+  width: 100px; /* Ridotto per schermi più piccoli */
+  animation: walkCycle 3s ease-in-out infinite;
+}
+
+@keyframes walkCycle {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.text-container {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.banner-title {
+  font-size: 4.5rem; /* Ridotto per schermi più piccoli */
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.5rem; /* Ridotto per schermi più piccoli */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  width: 120px; /* Ridotto per schermi più piccoli */
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsività per dispositivi mobili */
+/* Nascondi le zampe su dispositivi mobili */
+@media (max-width: 768px) {
+  .paws-left, .paws-right {
+    display: none; /* Nascondi le zampe */
+  }
+
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-title {
+    font-size: 2.5rem; /* Puoi regolare questa dimensione */
+    text-shadow: 1px 1px 0px #555, 2px 2px 0px #333, 3px 3px 0px #111;
+    margin-bottom: 5px; /* Aggiusta il margine inferiore */
+  }
+
+  .subtitle {
+    font-size: 1.5rem; /* Dimensione del testo per la sottotitolo */
+    margin-top: 5px; /* Margine superiore per avvicinare la scritta */
+    margin-bottom: 0;
+  }
+
+  .subtitle::after {
+    width: 70px; /* Regola la lunghezza della linea sotto il testo */
+  }
+}
+
+/* Mantieni il layout originale per schermi più grandi */
+@media (min-width: 769px) {
+  .paws-left, .paws-right {
+    display: block; /* Mostra le zampe */
+  }
+}
+
+/* Sezione Prodotti */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.5s ease;
+  margin: 10px;
+  position: relative;
+}
+
+.card-image {
+  width: 250px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .details {
+  opacity: 1;
+}
+
+.extra-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -250px; /* Sposta l'elemento a destra della card */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  width: 240px;
+  box-sizing: border-box;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.card:hover .extra-info {
+  display: block;
+  right: 0; /* Porta l'elemento dentro la card */
+}
+@media (min-width: 1024px) {
+  .card-wrapper {
+    margin-bottom: 60px; /* Aumenta il margine inferiore per separare le sezioni */
+  }
+
+  .extra-info {
+    width: 180px; /* Riduci ulteriormente la larghezza della sezione extra-info */
+    right: -220px; /* Mantieni lo spostamento verso l'esterno */
+    font-size: 0.8rem; /* Riduci la dimensione del testo */
+  }
+
+  .card:hover .extra-info {
+    right: 0; /* Porta l'elemento dentro la card durante l'hover */
+  }
+
+  .details {
+    padding: 4px; /* Riduci il padding per adattare meglio il testo */
+    font-size: 0.8rem; /* Riduci ulteriormente la dimensione del testo */
+  }
+}
+
+/* Sezione Social Media */
+.social-section {
+  background-color: #9db39b;
+  padding: 50px 0;
+}
+
+.social-section h2 {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.social-icon {
+  font-size: 50px;
+  color: #fff;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.social-icon:hover {
+  color: #333;
+}
+
+.social-hidden {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animation="slide-in-left"] {
+  animation: slide-in-left 1.5s forwards;
+}
+
+[data-animation="slide-in-bottom"] {
+  animation: slide-in-bottom 1.5s forwards;
+}
+
+[data-animation="slide-in-right"] {
+  animation: slide-in-right 1.5s forwards;
+}
+@media (min-width: 2560px) {
+  .black-bar h1 {
+    font-size: 3em; /* Aumenta la dimensione del testo per titoli */
+    font-weight: 700; /* Rafforza il peso del testo */
+  }
+
+  .black-bar p {
+    font-size: 1.5em; /* Aumenta la dimensione del testo per paragrafi */
+    line-height: 2; /* Migliora la spaziatura tra le righe */
+  }
+  .card-title{
+    font-size: 3em;
+  }
+  .hidden-description{
+    font-size: 2em;
+  }
+  .producer-info{
+    font-size: 2em;
+  }
+
+  /* Stile per il titolo */
+  /* Stile per il titolo */
+  #collarino-title {
+    font-size: 4rem; /* Aumenta la dimensione del titolo */
+    margin-bottom: 40px; /* Aggiungi spazio sotto il titolo */
+  }
+
+  /* Stile per il paragrafo */
+  #collarino-description {
+    font-size: 2.5rem; /* Aumenta la dimensione del testo del paragrafo */
+    line-height: 1.8; /* Migliora la spaziatura tra le righe */
+    margin-right: 50px; /* Aggiungi margine a destra */
+  }
+
+  /* Stile per l'immagine del collarino */
+  #collarino-image {
+    width: 900px; /* Aumenta la dimensione massima dell'immagine */
+    height: auto; /* Mantieni il rapporto d'aspetto */
+    margin-left: 20%;
+  }
+
+  /* Modifica per il layout della sezione */
+  .collarino-section .row {
+    justify-content: flex-end; /* Allinea meglio gli elementi */
+  }
+
+
+  .banner-title {
+    font-size: 6rem; /* Aumenta la dimensione del titolo del banner */
+    text-shadow: 4px 4px 0px #555, 6px 6px 0px #333, 8px 8px 0px #111;
+  }
+
+  .subtitle {
+    font-size: 2.5rem; /* Aumenta la dimensione della sottotitolo */
+    margin-top: 20px;
+  }
+
+  .subtitle::after {
+    width: 150px; /* Aumenta la larghezza della linea sotto il testo */
+  }
+
+  .card-wrapper {
+    margin-bottom: 80px; /* Aumenta il margine inferiore per separare le sezioni */
+  }
+
+  .extra-info {
+    width: 300px; /* Aumenta la larghezza della sezione extra-info */
+    right: -320px; /* Sposta leggermente verso l'esterno l'extra-info */
+    font-size: 1.2rem; /* Aumenta la dimensione del testo */
+  }
+
+  .card:hover .extra-info {
+    right: 0; /* Porta l'elemento dentro la card durante l'hover */
+  }
+
+  .details {
+    padding: 10px; /* Aumenta il padding per adattare meglio il testo */
+    font-size: 1rem; /* Aumenta la dimensione del testo */
+  }
+
+  .social-icon {
+    font-size: 80px; /* Aumenta la dimensione delle icone social */
+  }
+  .card {
+   width: 1000px; /* Aumenta ulteriormente la larghezza massima */
+  }
+
+  .details {
+    padding: 20px; /* Aumenta il padding per schermi più grandi */
+  }
+
+  .extra-info {
+    width: 480px; /* Aumenta la larghezza della sezione extra-info */
+    font-size: 1,7em;
+  }
+  .logo{
+    width: 300px;
+  }
+  .paws-img{
+    width: 300px;
+  }
+  .age-popup {
+    font-size: 2em;
+  }
+  .age-popup-buttons{
+    font-size: 2em;
+    width: 100%;
+  }
+}

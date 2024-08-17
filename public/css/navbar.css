@@ -1,0 +1,56 @@
+/* Stile della Navbar */
+.transparent-bg {
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Spazio aggiuntivo per un aspetto migliore */
+}
+
+/* Stile del logo */
+.img-logo {
+  width: 220px; /* Dimensione del logo */
+  height: auto;
+  z-index: 1001;
+}
+
+/* Stile delle zampe */
+.nav-paw {
+  width: 150px; /* Regola le dimensioni delle zampe */
+  height: auto;
+  z-index: 1001;
+}
+
+/* Contenitori per le zampe */
+.navbar-left, .navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  .transparent-bg {
+    flex-direction: row; /* Disporre gli elementi in una riga */
+    padding: 5px 10px;
+  }
+
+  .navbar-left, .navbar-right {
+    flex: 0 1 auto; /* Assicurati che si adatti al contenuto */
+  }
+
+  .img-logo {
+    width: 100px; /* Riduci la dimensione del logo sui dispositivi mobili */
+  }
+
+  .nav-paw {
+    width: 80px; /* Riduci la dimensione delle zampe sui dispositivi mobili */
+  }
+}

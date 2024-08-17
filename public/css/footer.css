@@ -1,0 +1,189 @@
+/* Stile generale del footer */
+/* Stile generale del footer */
+footer {
+    padding: 10px 0;  /* Riduce ulteriormente il padding verticale */
+    background-color:#4d4357; /* bg-body-tertiary */
+    color: #6c757d; /* text-muted */
+    overflow: hidden; /* Assicura che il footer non abbia un'altezza eccessiva */
+}
+
+footer .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1; /* Permette al contenuto di crescere */
+    margin-bottom: 0;  /* Elimina lo spazio verticale */
+}
+
+footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;  /* Elimina lo spazio verticale */
+    width: 100%; /* Assicura che la riga occupi tutta la larghezza */
+}
+
+footer .col {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;  /* Elimina lo spazio tra le colonne */
+    text-align: center; /* Centra il testo in ogni colonna */
+}
+
+footer h6 {
+    font-weight: bold;
+    margin-bottom: 5px;  /* Riduce lo spazio sotto i titoli */
+}
+
+footer p {
+    margin: 0;  /* Elimina lo spazio sotto i paragrafi */
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-media {
+    margin: 10px 0;  /* Riduce lo spazio verticale tra le icone social */
+    text-align: center;
+}
+
+footer .social-media a {
+    margin: 0 5px;  /* Ridotto margine per schermi più piccoli */
+    color: #c7ab57;
+    display: inline-block; /* Assicura che le icone siano in linea */
+}
+
+footer .social-media a:hover {
+    color: #6c757d;
+}
+
+.flag-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag-container img {
+    margin: 0 10px; /* Spaziatura tra le bandiere e il testo */
+}
+
+#world-clock p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer .col {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        word-break: break-word; /* Evita che il testo esca dal container */
+    }
+    
+    .social-media {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .flag-container {
+        flex-direction: column; /* Disposizione verticale su schermi piccoli */
+    }
+
+    .flag-container img {
+        margin: 10px 0; /* Spaziatura tra le bandiere e il testo */
+    }
+}
+
+/* Design per schermi molto grandi */
+@media (min-width: 1600px) {
+    footer {
+        padding: 10px 20px; /* Aumenta il padding solo per schermi molto grandi */
+    }
+
+    footer .section {
+        flex-direction: row; /* Dispone le sezioni in fila */
+        justify-content: space-between; /* Spazia le sezioni */
+        text-align: left; /* Allinea il testo a sinistra */
+    }
+
+    footer .container {
+        max-width: 2200px; /* Aumenta la larghezza del container */
+    }
+
+    footer .row {
+        display: flex;
+        flex-wrap: nowrap; /* Impedisce il wrap delle colonne */
+        justify-content: space-between; /* Spazia le colonne */
+    }
+
+    footer .col {
+        flex: 0 0 30%; /* Aumenta la larghezza delle colonne */
+        margin: 0; /* Elimina il margine tra le colonne */
+        text-align: left; /* Allinea il testo a sinistra */
+    }
+
+    footer h6 {
+        font-size: 1.5em; /* Aumenta la dimensione del font per i titoli */
+        margin-bottom: 5px; /* Riduce lo spazio sotto i titoli */
+    }
+
+    footer p {
+        font-size: 1.5em; /* Aumenta la dimensione del font per i paragrafi */
+    }
+
+    footer .social-media {
+        margin: 20px 0; 
+        display: flex;
+        justify-content: center; /* Centra le icone */
+    }
+
+    footer .social-media a {
+        margin: 0 10px; 
+        font-size: 1.5em; 
+    }
+}
+
+@media (min-width: 2010px) and (max-width: 2700px) {
+    .p-footer {
+        font-size: 2rem;
+    }
+
+    .font-p {
+        font-size: 2em;
+    }
+}
+
+/* Stili specifici per le zampe dei cani */
+.paw-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.paw-steps {
+    width: 40%;
+    height: auto;
+}
